@@ -29,6 +29,10 @@ fs.createReadStream('kepler_data.csv')
       console.log(err);
   })
   .on('end', () => {
+      //We use the .map functiuon to iterate over the 8 habitable planets
+      console.log(habitablePlanets.map((planet) => {
+          return planet['kepler_name'];
+      }))
       console.log(`${habitablePlanets.length} habitable planets found`)
   });
 //parse();
